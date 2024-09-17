@@ -22,7 +22,7 @@ app.post('/api/quiz/submit', (req, res) => {
   const results = quizData.map((question) => {
     const userAnswer = userAnswers[question.id];
 
-    if (question.type === 'single' || question.type === 'truefalse') {
+    if (question.type === 'single' || question.type === 'truefalse' ||  question.type === 'image') {
       const isCorrect = userAnswer === question.correctAnswer;
       if (isCorrect) score++;
       return { id: question.id, correct: isCorrect };
